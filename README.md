@@ -18,3 +18,8 @@ Don't worry too much if you have the odd linebacker to feed. When cooking for a 
 * Cafe owners: Fluctuating customer numbers are commonplace. They need a quick answer to the "how much to order?" question for the long weekend, so they can get back to running their business.
 
 ## Tech Stack
+
+* HMTL 5
+* Bootstrap CSS
+* Python 3.x
+* Git
