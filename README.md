@@ -26,22 +26,32 @@ Users will also be able to create an account and log in.
 * Python 3.x
 * Git
 * AWS Cognito
+* AWS S3
+* AWS CloudFront
 * AWS API Gateway
-* AWS Aurora
+* AWS DynamoDB
 * AWS Lambda
 
-### Nice-to-have Tech Stack
-Will only implement if time allows.
-* AWS Load Balancer
-* AWS S3
-
 ## Dataflow Diagram
+![data flow diagram](/docs/data-flow-diagram.png)
 
 ## Application Architecture Diagram
+![application architecture diagarm](/docs/app-architecture-diagram.png)
 
 ## User Stories
-
+![Chloe's user story](/docs/user-profiles/chloe.png)
+![Nathan's user story](/docs/user-profiles/nathan.png)
+![Shioban's user story](/docs/user-profiles/shioban.png)
 
 ## Wireframes
+![wireframes of the homepage](/docs/wireframes/home.png)
+![wireframes of the login page](/docs/wireframes/login.png)
+![wireframes of the sign up page](/docs/wireframes/sign-up.png)
+![wireframes of the results page](/docs/wireframes/result.png)
 
 ## Trello Screenshots
+![Trello board screen shot 1](/docs/screen-shots/2022-02-21-13.00.56.png)
+![Trello board screen shot 2](/docs/screen-shots/2022-02-23-11.11.34.png)
+![Trello board screen shot 3](/docs/screen-shots/2022-02-24-15.58.32.png)
+![Trello board screen shot 4](/docs/screen-shots/2022-02-25-12.10.05.png)
+![Trello board screen shot 5](/docs/screen-shots/2022-02-25-18.21.37.png)
