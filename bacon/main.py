@@ -1,7 +1,9 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 
 db = SQLAlchemy()
+ma = Marshmallow()
 
 def create_app():
 
@@ -11,9 +13,10 @@ def create_app():
     app.config.from_object("config.app_config")
 
     db.init_app(app)
+    ma.init_app(app)
 
-    # if __name__ == '__main__':
-    #     app.run(debug=True)
+    from commands import db_commands
+    app.register_blueprint(db_commands)
 
     # Register our routes
     from controllers import registerable_controllers
