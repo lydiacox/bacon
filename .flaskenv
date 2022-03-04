@@ -1,0 +1,2 @@
+FLASK_APP=<your_app_name_here>
+FLASK_ENV=development
