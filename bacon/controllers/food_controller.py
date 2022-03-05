@@ -13,28 +13,28 @@ def home():
     During production this is localhost:5000 or 127.0.0.1:5000
     """
     data = {
-        "page_title": "Eggs & Bacon Homepage",
+        "page_title": "Eggs & Bacon",
     }
     return render_template("index.html", page_data=data)
 
 @food.route('/login/', methods=["GET"])
 def login():
     data = {
-        "page_title": "Eggs & Bacon | Login",
+        "page_title": "Login",
     }
     return render_template("login.html", page_data=data)
 
 @food.route('/signup/', methods=["GET"])
 def signup():
     data = {
-        "page_title": "Eggs & Bacon | Sign Up",
+        "page_title": "Sign Up",
     }
     return render_template("signup.html", page_data=data)
 
 @food.route('/cook/', methods=["GET"])
 def cook():
     data = {
-        "page_title": "Eggs & Bacon | Let's Cook!",
+        "page_title": "Let's Cook!",
     }
     return render_template("cook.html", page_data=data)
 
