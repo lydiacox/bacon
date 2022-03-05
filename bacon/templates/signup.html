@@ -3,7 +3,14 @@
     <div>
         <h2>Sign up for Eggs & Bacon</h2>
         <p>
-            Fields go here.
+            <div>
+                <form action="/signup/" method="POST">
+                    <input type="text" name="name" placeholder="Name...">
+                    <input type="text" name="email" placeholder="Email...">
+                    <input type="text" name="password" placeholder="Password...">
+                    <button>Sign Up</button>
+                </form>
+            </div>
         </p>
     </div>
 {% endblock %}
