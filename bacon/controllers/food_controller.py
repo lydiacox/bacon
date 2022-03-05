@@ -17,19 +17,19 @@ def home():
     }
     return render_template("index.html", page_data=data)
 
-@food.route('/login/', methods=["GET"])
-def login():
-    data = {
-        "page_title": "Login",
-    }
-    return render_template("login.html", page_data=data)
+# @food.route('/login/', methods=["GET"])
+# def login():
+#     data = {
+#         "page_title": "Login",
+#     }
+#     return render_template("login.html", page_data=data)
 
-@food.route('/signup/', methods=["GET"])
-def signup():
-    data = {
-        "page_title": "Sign Up",
-    }
-    return render_template("signup.html", page_data=data)
+# @food.route('/signup/', methods=["GET"])
+# def signup():
+#     data = {
+#         "page_title": "Sign Up",
+#     }
+#     return render_template("signup.html", page_data=data)
 
 @food.route('/cook/', methods=["GET"])
 def cook():
