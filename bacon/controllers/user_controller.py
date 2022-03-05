@@ -26,7 +26,7 @@ def sign_up():
     db.session.add(new_user)
     db.session.commit()
     login_user(new_user)
-    return redirect(url_for("/"))
+    return redirect(url_for("food.home"))
 
 @users.route("/login/", methods=["GET", "POST"])
 def log_in():
@@ -38,6 +38,6 @@ def log_in():
     user = User.query.filter_by(email=request.form["email"]).first()
     if user and user.check_password(password=request.form["password"]):
         login_user(user)
-        return redirect(url_for('/'))
+        return redirect(url_for("food.home"))
     
     abort(401, "Login unsuccessful. Did you supply the correct username and password?")
