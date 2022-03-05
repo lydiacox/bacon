@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, render_template
 from main import db
 from models.food import Food
 from schemas.food_schema import food_schema, multi_food_schema
@@ -6,27 +6,37 @@ from schemas.food_schema import food_schema, multi_food_schema
 food = Blueprint('food', __name__)
 
 @food.route('/')
-def hello_world():
+def home():
     """
     The homepage route. 
-    
-    This will later contain information about what classes are available to enroll in.
     '/' is the address here, which means it will be available from our host domain. 
     During production this is localhost:5000 or 127.0.0.1:5000
     """
-    return "Hello, world! Check this out!"
+    data = {
+        "page_title": "Eggs & Bacon Homepage",
+    }
+    return render_template("index.html", page_data=data)
 
 @food.route('/login/', methods=["GET"])
 def login():
-    return "The login page"
+    data = {
+        "page_title": "Eggs & Bacon | Login",
+    }
+    return render_template("login.html", page_data=data)
 
-@food.route('/signup/', methods=["POST"])
+@food.route('/signup/', methods=["GET"])
 def signup():
-    return "The signup page"
+    data = {
+        "page_title": "Eggs & Bacon | Sign Up",
+    }
+    return render_template("signup.html", page_data=data)
 
 @food.route('/cook/', methods=["GET"])
 def cook():
-    return "The cooking page"
+    data = {
+        "page_title": "Eggs & Bacon | Let's Cook!",
+    }
+    return render_template("cook.html", page_data=data)
 
 # @food.route("/foods/", methods=["GET"])
 # def get_foods():
