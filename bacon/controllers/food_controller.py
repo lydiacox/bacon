@@ -26,8 +26,6 @@ def home():
     if request.method == "GET":
         return render_template("index.html", page_data=data)
     pax = (request.form)
-    if pax > 1000:
-        return render_template("too_much.html")
     adults, children = pax['adults'], pax['children']
     if adults:
         adults = int(adults)
@@ -38,6 +36,8 @@ def home():
     else:
         children = 0
     total_pax = adults + (children *.5)
+    if total_pax > 1000:
+        return render_template("toomuch.html", page_data=data)
     bacon = round(total_pax * .125, 1)
     eggs = int(total_pax * 2)
     dozens = dozen(eggs)
