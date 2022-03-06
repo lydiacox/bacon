@@ -17,6 +17,10 @@ def home():
     }
     if request.method == "GET":
         return render_template("index.html", page_data=data)
+    pax = (request.form)
+    adults = int(pax['adults'])
+    children = int(pax['children'])
+    return render_template("index.html", page_data=data)
 
 # @food.route('/login/', methods=["GET"])
 # def login():
