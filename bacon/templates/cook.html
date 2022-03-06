@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <div>
-        <h2>Let's get cooking!</h2>
+        <h2>Here's how much food you'll need</h2>
         <p>
-            Results go here.
+            Bacon: {{ page_data.bacon }}kg
+        </p>
+        <p>
+            Eggs: {{ page_data.eggs }}, or {{ page_data.dozen }} dozen
         </p>
     </div>
 {% endblock %}
