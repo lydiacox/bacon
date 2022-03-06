@@ -5,6 +5,13 @@ from schemas.food_schema import food_schema, multi_food_schema
 
 food = Blueprint('food', __name__)
 
+def round_to_nearest(num, base):
+    if num % base:
+        round = num + (base - (num % base))
+        return round
+    else:
+        return num
+
 @food.route('/', methods=["GET", "POST"])
 def home():
     """
@@ -18,9 +25,25 @@ def home():
     if request.method == "GET":
         return render_template("index.html", page_data=data)
     pax = (request.form)
-    adults = int(pax['adults'])
-    children = int(pax['children'])
-    return render_template("index.html", page_data=data)
+    adults, children = pax['adults'], pax['children']
+    if adults:
+        adults = int(adults)
+    else:
+        adults = 0
+    if children:
+        children = int(children)
+    else:
+        children = 0
+    total_pax = adults + (children *.5)
+    bacon = total_pax * .125
+    eggs = total_pax * 2
+    eggs = round_to_nearest(eggs, 6)
+    data = {
+        "page_title": "Let's cook!",
+        "bacon": str(bacon),
+        "eggs": str(eggs)
+    }
+    return render_template("cook.html", page_data=data)
 
 # @food.route('/login/', methods=["GET"])
 # def login():
