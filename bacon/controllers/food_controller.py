@@ -5,7 +5,7 @@ from schemas.food_schema import food_schema, multi_food_schema
 
 food = Blueprint('food', __name__)
 
-@food.route('/')
+@food.route('/', methods=["GET", "POST"])
 def home():
     """
     The homepage route. 
@@ -15,7 +15,8 @@ def home():
     data = {
         "page_title": "Eggs & Bacon",
     }
-    return render_template("index.html", page_data=data)
+    if request.method == "GET":
+        return render_template("index.html", page_data=data)
 
 # @food.route('/login/', methods=["GET"])
 # def login():
@@ -32,7 +33,7 @@ def home():
 #     return render_template("signup.html", page_data=data)
 
 @food.route('/cook/', methods=["GET"])
-def cook():
+def results():
     data = {
         "page_title": "Let's Cook!",
     }
